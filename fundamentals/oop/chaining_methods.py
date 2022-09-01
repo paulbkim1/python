@@ -8,17 +8,20 @@ class User:
         self.gold_card_points = 0
     def display_info(self):
         print(f"{self.first_name} {self.last_name} {self.email} {self.age} {self.reward_member} {self.gold_card_points} points")
+        return self
     def enroll(self):
         if self.reward_member == True:
             print("User already a member")
         else:
             self.reward_member = True
             self.gold_card_points += 200
+        return self
     def spend_points(self, amount):
         if self.gold_card_points < amount:
             print("Not enough points")
         else:
             self.gold_card_points -= amount
+        return self
 
 user1 = User("John", "Kim", "p@gmail.com", 27)
 user2 = User("Paul", "Kim", "pk@gmail.com", 27)
