@@ -20,13 +20,14 @@ print(sum_len([1,2,3,4,5]))
 
 # 4. Values Greater than Second
 def values_greater (a):
-    if (len(a) < 2):
-        return False
     new_list = []
-    for i in a:
-        if a[1]< a[i]:
-            new_list.append(a[i])
-    return new_list
+    if (len(a) > 2):
+        for i in range(0,len(a)):
+            if a[1] < a[i]:
+                new_list.append(a[i])
+        return new_list
+    else:
+        return False
 print(values_greater([5, 2, 3, 2, 1, 4]))
 
 #
