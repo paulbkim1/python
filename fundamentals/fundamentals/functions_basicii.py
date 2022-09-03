@@ -7,10 +7,11 @@ def countdown (num):
 print(countdown(10))
 
 # 2. Print and Return
-def print_return (a,b):
-    print(a)
-    return(b)
-print(print_return(10,20))
+def print_and_return(a):
+    print(a[0])
+    return a[1]
+
+print(print_and_return([1,2]))
 
 # 3. First Plus Length
 def sum_len (a):
@@ -30,4 +31,12 @@ def values_greater (a):
         return False
 print(values_greater([5, 2, 3, 2, 1, 4]))
 
-#
+# 5. This Length, That Value
+def length_value(a,b):
+    new_list = []
+    for i in range(0,a):
+        new_list.append(b)
+    return new_list
+
+
+print(length_value(6,2))

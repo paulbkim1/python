@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+</head>
+
+<body>
+    <h1>Counter</h1>
+    <p> {{clicks}} </p>
+    <div>
+        <form action="/process_clicks" method="post">
+            <button name="clicks" type="submit" value="1">Clicks</button>
+            <button name="subject" type="submit" value="fav_CSS">CSS</button>
+        </form>
+    </div>
+</body>
+
+</html>
