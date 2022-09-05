@@ -16,6 +16,8 @@ def count_visits():
 @app.route('/new_count')
 def new_count():
     clicks = session['clicks']
+
+    # clicks = clicks + clicks
     return render_template('counter.html', clicks = clicks)
 
 
