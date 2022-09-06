@@ -10,11 +10,16 @@
 
 <body>
     <h1>Counter</h1>
-    <p> {{ clicks }} </p>
+    <p> {{ session['counter'] }} </p>
     <div>
-        <form action="/process_clicks" method="post">
-            <button name="clicks" type="submit" onclick="incrememnt(value=)">Clicks</button>
-            <button name="subject" type="submit" value="fav_CSS">CSS</button>
+        <form action="/process_1clicks" method="post">
+            <button name="counter" type="submit">Clicks</button>
+        </form>
+        <form action="/process_2clicks" method="post">
+            <button name="counter2" type="submit">Clicks +2</button>
+        </form>
+        <form action="/destroy_session" method="post">
+            <button name="clear" type="submit">Reset</button>
         </form>
     </div>
 </body>
