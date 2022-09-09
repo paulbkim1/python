@@ -12,6 +12,9 @@
         {% for one_user in all_users %}
         <li>
             {{ one_user.id}}) Name: {{one_user.first_name}} last: {{one_user.last_name}} email: {{one_user.email}}
+            <a href="/users/{{ one_user.id }}">Show</a> |
+            <a href="/users/{{ one_user.id }}/edit">Edit</a> |
+            <a href="/users/{{ one_user.id }}/destroy">Delete</a>
         </li>
         {% endfor %}
     </ul>
