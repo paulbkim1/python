@@ -1,0 +1,10 @@
+body{
+    display: flex;
+    gap: 50px;
+}
+
+#dojo-names{
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+}
