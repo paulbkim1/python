@@ -28,7 +28,12 @@ def register():
 def success():
     if not "login_id" in session:
         return redirect('/')
-    return render_template('success.html')
+    data = {
+        'id' : session['login_id']
+    }
+    one_user = Login.one_user(data)
+    print(one_user)
+    return render_template('success.html', one_user = one_user)
 
 @app.route('/logout')
 def logout():

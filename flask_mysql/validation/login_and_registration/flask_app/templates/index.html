@@ -55,6 +55,9 @@
         <h1>Login</h1>
         <form action="/login" method="post">
             <div class="form-group">
+                {% for i in get_flashed_messages(category_filter = ["log"]) %}
+            <p>{{ i }}</p>
+            {% endfor %}
                 <label for="login_email">Email:</label>
                 <input type="email" class="form-control" id="login_email" name="login_email">
             </div>

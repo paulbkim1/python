@@ -17,6 +17,11 @@ class Login:
         self.updated_at = data['updated_at']
 
     @classmethod
+    def one_user(cls,data):
+        query = "SELECT * FROM users WHERE id = %(id)s;"
+        return connectToMySQL(DATABASE).query_db(query,data)
+
+    @classmethod
     def created_user(cls,data):
         query = "INSERT INTO users (first_name, last_name, email, password) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s);"
         return connectToMySQL(DATABASE).query_db(query,data)
