@@ -2,6 +2,9 @@ from flask_app import app
 from flask import render_template, request, session, redirect
 from flask_app.models.dojos_model import Dojos
 
+@app.route('/')
+def redirect_page():
+    return redirect('/dojos')
 
 @app.route('/dojos')
 def dojos():

@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    gap: 50px;
+    margin: 50px;
+
+}
+
+#right-container{
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+}
+ul li {
+    font-size: 16px;
+    display: inline-block;
+    border: 3px solid black;
+    padding: 5px 20px;
+    margin-bottom: 30px;
+}
+
+input {
+    margin: 7px 0px;
+}
+
+#home-box {
+    margin-top: 40px;
+}

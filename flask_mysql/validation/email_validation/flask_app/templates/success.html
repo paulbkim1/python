@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Page</title>
+</head>
+<body>
+    <h1>The email address you entered ({{ email_list[0].email }}) is a VALID email address! Thank you!</h1>
+    <h1>Email Addresses Entered:</h1>
+    {% for i in email_list %}
+    <p>{{ i.email }} {{ i.created_at }} <a href="/delete/{{ i.id }}">delete</a></p>
+    {% endfor %}
+</body>
+</html>

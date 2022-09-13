@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Thank you for your feedback!</h1>
+    <div id="container">
+        <div id="container-left">
+            <h3>Name:</h3>
+            <h3>Email:</h3>
+            <h3>Rating:</h3>
+            <h3>Comments:</h3>
+        </div>
+        <div id="container-right">
+            <h3>{{ results[0].name }}</h3>
+            <h3>{{ results[0].email }}</h3>
+            <h3>{{ results[0].rating }}</h3>
+            <h3>{{ results[0].comment }}</h3>
+        </div>
+    </div>
+</body>
+</html>
