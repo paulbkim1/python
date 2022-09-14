@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Share</title>
+</head>
+<body>
+    <h1>
+
+        Welcome {{ logged_user.first_name }}
+
+    </h1>
+    <div>
+        <h4>All posted recipes:</h4>
+        <a href="/recipes/new">+ Create</a>
+        <a href="/logout">logout</a>
+    </div>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Under</th>
+            <th>Posted By</th>
+            <th>Actions</th>
+        </tr>
+        {% for i in recipes %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{% if i.under == 0 %} Yes {% else %} No {% endif %}</td>
+            <td>{{ i.planner.first_name }} {{ i.planner.last_name }}</td>
+            <td>
+                <a href="/recipes/{{ i.id }}">view recipe</a>
+                {% if session['login_id'] == i.user_id %}
+                | <a href="/recipes/edit/{{ i.id }}">edit</a> |
+                <a href="/recipes/delete/{{ i.id }}">delete</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

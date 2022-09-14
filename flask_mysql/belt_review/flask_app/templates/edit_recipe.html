@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Share</title>
+</head>
+<body>
+    <div id="content">
+        <div class="container">
+            <h1>Edit Recipe!</h1>
+            <form action="/recipes/edit/{{ recipes.id }}/info " method="post">
+                {% for i in get_flashed_messages(category_filter = ["name"]) %}
+                <p>{{ i }}</p>
+                {% endfor %}
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{ recipes.name }}">
+                </div>
+                {% for i in get_flashed_messages(category_filter = ["description"]) %}
+                <p>{{ i }}</p>
+                {% endfor %}
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="5" cols="33" >{{ recipes.description }}</textarea>
+                </div>
+                {% for i in get_flashed_messages(category_filter = ["instruction"]) %}
+                <p>{{ i }}</p>
+                {% endfor %}
+                <div class="form-group">
+                    <label for="instruction">Instructions</label>
+                    <textarea id="instruction" name="instruction" rows="5" cols="33">{{ recipes.instruction }}</textarea>
+                </div>
+        </div>
+
+        <div class="container">
+                <a href="/recipes">back to recipes</a>
+                <a href="/logout">logout</a>
+                <div class="form-group">
+                    {% for i in get_flashed_messages(category_filter = ["date_cooked"]) %}
+                <p>{{ i }}</p>
+                {% endfor %}
+                    <label for="date">Date Cooked/Made:</label>
+                    <input type="date" class="form-control" id="date" name="date_cooked" value="{{ recipes.date_cooked }}">
+                </div>
+                {% for i in get_flashed_messages(category_filter = ["under"]) %}
+                <p>{{ i }}</p>
+                {% endfor %}
+                <p>Under 30 minutes?</p>
+                <div class="form-group">
+                    <label for="under_yes">Yes</label>
+                    <input type="radio" class="form-control" id="under_yes" name="under" value="0" {% if recipes.under == 0 %}checked{%endif%}>
+                    <label for="under_no">No</label>
+                    <input type="radio" class="form-control" id="under_no" name="under" value="1" {% if recipes.under == 1 %}checked{%endif%}>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
