@@ -51,4 +51,4 @@ def all_recipes():
         'id' : session['login_id']
     }
     logged_user= Users.check_user(data)
-    return render_template('welcome.html', recipes = recipes, logged_user = logged_user)
+    return render_template('dashboard.html', recipes = recipes, logged_user = logged_user)
